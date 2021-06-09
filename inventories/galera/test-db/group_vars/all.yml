@@ -2,7 +2,7 @@
 dns_domain: example.com
 
 # MariaDB version
-mariadb_version: 10.3.10
+mariadb_version: 10.5
 
 galera_cluster_name: test
 
@@ -10,10 +10,10 @@ galera_cluster_name: test
 first_time: false
 
 # Setting root password on first run
-mysql_root_password: XXXXXX
+mysql_root_password: testpass123
 
 # InnoDB Buffer Pool Size
 innodb_buffer_pool_size: 3096M
 
 # MariaDB Repo URL
-mariadb_repo_url: 
+mariadb_repo_url: http://yum.mariadb.org/10.5/centos7-amd64

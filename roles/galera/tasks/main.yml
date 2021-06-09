@@ -24,7 +24,7 @@
     state: present
   with_items:
     - MariaDB-client
-    - galera
+    - galera-4
     - MariaDB-server
     - MySQL-python
   register: installation
