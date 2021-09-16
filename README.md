@@ -27,3 +27,21 @@ Variable | Default | Description
 * Ansible 2.11.1
 * [MariaDB 10.5.10](https://mariadb.com/kb/en/mariadb-10510-release-notes/)
 * [Galera 4](https://mariadb.com/kb/en/meta/galera-versions/)
+
+## Troubleshooting
+
+### Recover a MariaDB Galera Cluster Node due to Database Corruption
+
+* First make sure other nodes are running well and follow these instructions.
+* Navigate to mysql folder using `cd /var/lib/mysql/`
+* Create a new directory using `mkdir /fioldername`
+* Copy the whole folder mysql using `rsync -avz . /foldername/`
+* Remove all the files in mysql folder using `rm -rf *`
+* Again copy the mysql DB from backup folder to mysql folder using `cp -rpf /foldername/mysql .`
+* Add innodb_force_recovery=1 in /etc/my.cnf.d/server.cnf file
+* Add TimeoutSec variable in `/etc/systemd/system/mysql.service` file
+* The above TimeoutSec variable value should be mentioned in secs `TimeoutSec=900`
+* Now start the service `systemctl start mariadb`
+* You can check the status of cluster using `systemctl status mariadb`
+* Once the cluster is up just comment innodb_force_recovery=1 in server.cnf file
+* Then again restart the cluster using `systemctl restart mariadb`
