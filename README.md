@@ -19,7 +19,7 @@ Variable | Default | Description
 [`galera_cluster_name`](inventories/galera/test-db/group_vars/all.yml#L7) | 10.5 | specify [wsrep_cluster_name](https://mariadb.com/kb/en/galera-cluster-system-variables/#wsrep_cluster_name).
 [`first_time`](inventories/galera/test-db/group_vars/all.yml#L10) | false | is the custom environment variable defined to determine if its first run to setup the cluster.
 [`mysql_root_password`](inventories/galera/test-db/group_vars/all.yml#L13) | - | specify mariadb root password.
-[`innodb_buffer_pool_size`](inventories/galera/test-db/group_vars/all.yml#L16) | 3096M | set [innodb_buffer_pool_size](https://mariadb.com/kb/en/innodb-buffer-pool/#innodb_buffer_pool_size) for MariaDB.
+[`innodb_buffer_pool_size`](inventories/galera/test-db/group_vars/all.yml#L16) | 512M | set [innodb_buffer_pool_size](https://mariadb.com/kb/en/innodb-buffer-pool/#innodb_buffer_pool_size) for MariaDB.
 [`mariadb_repo_url`](inventories/galera/test-db/group_vars/all.yml#L19) | [default_link](http://yum.mariadb.org/10.5/centos7-amd64) | It is [repository_url](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/deployment_guide/sec-setting_repository_options), a URL to the directory where the repodata directory of a MariaDB repository is located.
 
 ### Tested Versions
